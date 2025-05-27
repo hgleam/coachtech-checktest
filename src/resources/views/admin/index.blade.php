@@ -22,6 +22,12 @@
 <div class='admin-page__body'>
     <h2 class='admin-page__title'>Admin</h2>
 
+    @if (session('success'))
+        <div class='admin-page__flash-message admin-page__flash-message--success'>
+            {{ session('success') }}
+        </div>
+    @endif
+
     <form method='get' action="{{ route('admin.search') }}" class='admin-page__search-form'>
     <div class='admin-page__filter admin-filter'>
         <input type='text' class='admin-filter__input admin-filter__input--text' name='keyword' placeholder='名前やメールアドレスを入力してください' value="{{ old('keyword', request('keyword')) }}">

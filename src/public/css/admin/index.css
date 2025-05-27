@@ -367,11 +367,11 @@ svg.w-5.h-5 {
 
 /* モーダルウィンドウ内の削除ボタン */
 .admin-modal__button--delete {
-    background-color: #c53030;
+    background-color: #BA370D;
     color: #fff;
 }
 .admin-modal__button--delete:hover {
-    background-color: #9b2c2c;
+    background-color: #BA370D;
 }
 
 /* エクスポートボタンのスタイル (admin-page__actions-and-pagination 内) */
@@ -389,4 +389,21 @@ svg.w-5.h-5 {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+}
+
+/* フラッシュメッセージ */
+.admin-page__flash-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    max-width: 1183px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-page__flash-message--success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
 }

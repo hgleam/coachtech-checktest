@@ -53,7 +53,7 @@ class AdminController extends Controller
     public function destroy(Contact $contact)
     {
         $contact->delete();
-        return redirect()->route('admin.index')->with('success', 'お問い合わせを削除しました。');
+        return redirect()->back()->with('success', 'お問い合わせを削除しました');
     }
 
     /**
