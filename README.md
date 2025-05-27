@@ -7,11 +7,13 @@
 ### Dockerビルドと起動
 
 1. リポジトリをクローンします。
+
    ```bash
    git clone git@github.com:hgleam/coachtech-checktest.git
    cd coachtech-checktest
    ```
 2. Dockerコンテナをビルドしてバックグラウンドで起動します。
+
    ```bash
    docker-compose up -d --build
    ```
@@ -31,7 +33,11 @@
 3. `.env.example` ファイルをコピーして `.env` ファイルを作成し、環境変数（特にデータベース接続情報など）を適切に設定します。
    ```bash
    cp .env.example .env
-   # .env ファイルを編集して DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD などを確認・設定
+   # .env ファイルを編集して、docker-compose.ymlのmysqlコンテナ設定(DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD)を確認・設定
+   # mysqlのサービス名 → .envのDB_HOST
+   # MYSQL_DATABASE → .envのDB_DATABASE
+   # MYSQL_USER → .envのDB_USERNAME
+   # MYSQL_PASSWORD → .envのDB_PASSWORD
    ```
 4. アプリケーションキーを生成します。
    ```bash
