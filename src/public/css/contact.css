@@ -1,0 +1,204 @@
+/* お問い合わせページ共通スタイル */
+/* フォーム全体 */
+.contact-form {
+    max-width: 972px;
+    width: 100%;
+}
+
+/* フォームのアクションボタンエリア (入力ページ・確認ページ共通) */
+.contact-form__actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* フォームの送信ボタン・確認ページの送信ボタン・修正ボタン (共通スタイル) */
+.contact-form__submit {
+    background-color: #82756A;
+    color: #fff;
+    padding: 12px 32px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 8px;
+    text-decoration: none;
+    height: 46px;
+}
+
+/* ---- お問い合わせ入力ページ ---- */
+/* 本体 */
+.contact-page__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* タイトル */
+.contact-page__title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: normal;
+    margin-bottom: 56px;
+    color: #8B7969;
+    flex-shrink: 0;
+}
+
+/* フォームラッパー */
+.contact-page__form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* フォームの行 */
+.contact-form__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+/* フォームのラベル */
+.contact-form__label {
+    width: 240px;
+    margin-right: 72px;
+    font-weight: normal;
+    font-size: 20px;
+    color: #8B7969;
+    text-align: left;
+}
+
+/* フォームの入力フィールドグループ (複数の入力フィールドを横並びにする) */
+.contact-form__field-group {
+    flex: 1;
+    display: flex;
+    gap: 16px;
+}
+
+/* フォームの入力フィールド (input, textarea, select) */
+.contact-form__input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type='text'].contact-form__input,
+input[type='email'].contact-form__input,
+select.contact-form__input {
+    height: 38px;
+}
+
+/* 必須マーク */
+.contact-form__required {
+    color: #FF9494;
+}
+
+/* フォームのエラーメッセージ */
+.contact-form__error {
+    color: #FF9494;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-left: 312px;
+    margin-bottom: 12px;
+}
+
+/* ---- お問い合わせ確認ページ ---- */
+/* 本体 */
+.contact-confirm-page__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* タイトル */
+.contact-confirm-page__title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: normal;
+    margin-bottom: 56px;
+    color: #8B7969;
+    flex-shrink: 0;
+}
+
+/* フォームラッパー */
+.contact-confirm-page__form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* 修正リンク */
+.contact-form__back {
+    background-color: transparent;
+    color: #8B7969;
+    text-decoration: underline;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+/* テーブル */
+.contact-form__table {
+    width: 80%;
+    max-width: 972px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #E0DFDE;
+}
+
+/* ヘッダーセル */
+.contact-form__table th {
+    background-color: #BAA899;
+    color: #fff;
+    padding: 16px;
+    text-align: left;
+    width: 240px;
+    font-size: 20px;
+    font-weight: normal;
+    border-bottom: 1px solid #E0DFDE;
+}
+
+/* データセル */
+.contact-form__table td {
+    padding: 16px;
+    border-bottom: 1px solid #E0DFDE;
+    font-size: 20px;
+}
+
+/* ---- お問い合わせ完了ページ ---- */
+/* 本体 */
+.contact-thanks-page__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* タイトル */
+.contact-thanks-page__title {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #8B7969;
+}
+
+/* HOMEボタン */
+.contact-thanks-page__home-button {
+    background-color: #82756A;
+    color: #fff;
+    padding: 12px 32px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 8px;
+    text-decoration: none;
+}

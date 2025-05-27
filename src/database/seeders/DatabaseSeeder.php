@@ -4,15 +4,20 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+/**
+ * データベースシーダー
+ */
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
-     *
+     * データベースシーダー
      * @return void
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            CategorySeeder::class,
+            ContactsSeeder::class,
+        ]);
     }
 }
