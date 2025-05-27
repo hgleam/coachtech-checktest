@@ -76,6 +76,29 @@ select {
     display: inline-block;
 }
 
+/* 管理画面ページのヘッダー特有のスタイル (基本スタイルでカバーできる想定) */
+.site-header.admin-page__header {
+    /* 必要であれば管理画面ヘッダー特有の上書きスタイルを記述 */
+}
+
+/* 管理画面ヘッダー内のログアウトフォーム */
+.site-header.admin-page__header .site-header__logout-form {
+    display: inline-block;
+    margin: 0;
+}
+
+/* 管理画面ヘッダー内のログアウトリンク */
+.site-header.admin-page__header .site-header__link--logout {
+    font-size: 14px;
+    color: #8B7969;
+    border: 1px solid #8B7969;
+    background-color: #fff;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: block;
+}
+
 /* メインコンテンツエリアのデフォルトスタイル */
 .layout__main {
     flex-grow: 1;

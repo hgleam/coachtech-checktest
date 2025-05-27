@@ -1,0 +1,388 @@
+/* 管理画面ページ全体 */
+.admin-page__body {
+    flex-grow: 1;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 管理画面ページ タイトル */
+.admin-page__title {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 35px;
+    font-weight: normal;
+    color: #8B7969;
+}
+
+/* 管理画面フィルターエリア全体 */
+.admin-page__filter {
+    max-width: 1183px;
+    margin: 0 auto 20px auto;
+    padding: 25px 30px;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* フィルター内の入力フィールド (共通スタイル) */
+.admin-filter__input,
+.admin-filter__select {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* フィルター内のテキスト入力フィールド */
+.admin-filter__input--text {
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+/* フィルター内のセレクトボックス */
+.admin-filter__select {
+    min-width: 150px;
+}
+
+/* フィルター内のボタン (共通スタイル) */
+.admin-filter__button {
+    display: inline-block;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+/* フィルター内の検索ボタン */
+.admin-filter__button--search {
+    background-color: #8B7969;
+}
+
+/* フィルター内のリセットボタン */
+.admin-filter__button--reset {
+    background-color: #c0c0c0;
+    color: #333;
+}
+
+/* エクスポートボタンとページネーションのラッパー */
+.admin-page__actions-and-pagination {
+    max-width: 1000px;
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* エクスポートボタンなどのアクションエリア */
+.admin-page__actions {
+    margin: 0;
+}
+
+/* ページネーション全体のラッパー */
+.admin-page__pagination {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 管理画面テーブル全体 */
+.admin-page__table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+/* テーブルのヘッダーセルとデータセル (共通スタイル) */
+.admin-table__header,
+.admin-table__data {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 20px;
+}
+
+/* テーブルのヘッダーセル */
+.admin-table__header {
+    background-color: #8B7969;
+    color: white;
+    font-weight: bold;
+}
+/* テーブルの左上角丸 */
+.admin-table__header:first-child {
+    border-top-left-radius: 5px;
+}
+/* テーブルの右上角丸 */
+.admin-table__header:last-child {
+    border-top-right-radius: 5px;
+}
+
+
+/* テーブルのデータセル */
+.admin-table__data {
+    background-color: #fff;
+    color: #333;
+}
+
+/* テーブルの最終行のデータセルの下線を削除 */
+.admin-table tr:last-child .admin-table__data {
+    border-bottom: none;
+}
+
+/* テーブルのアクションセル (例: 詳細ボタン) */
+.admin-table__data--action {
+    text-align: center;
+}
+
+/* テーブル内のアクションリンク (例: 詳細ボタン) */
+.admin-table__action-link {
+    display: inline-block;
+    padding: 6px 15px;
+    border: 1px solid #8B7969;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #8B7969;
+    text-decoration: none;
+    font-size: 13px;
+}
+.admin-table__action-link:hover {
+    background-color: #f8f8f8;
+}
+
+/* ページネーションSVGアイコンのスタイル */
+svg.w-5.h-5 {
+    width: 18px;
+    height: 18px;
+}
+
+/* ページネーションの「Showing X to Y of Z results」テキスト */
+.admin-page__pagination p.text-sm {
+    color: #8B7969;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+/* ページネーションのナビゲーション要素 (navタグ) */
+.admin-page__pagination nav[role="navigation"] {
+    display: flex;
+    justify-content: center;
+}
+
+/* ページネーションのリスト要素 (ulタグ) */
+.admin-page__pagination .pagination {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ページネーションの各アイテム (liタグ) */
+.admin-page__pagination .page-item {
+    margin: 0 0;
+    /* padding: 2px; */
+}
+
+/* ページネーションのリンク要素 (aタグ、spanタグ共通の基本スタイル) */
+.admin-page__pagination a[rel="prev"],
+.admin-page__pagination a[rel="next"],
+.admin-page__pagination li[aria-disabled="true"] span,
+.admin-page__pagination a[href*="page="],
+.admin-page__pagination li[aria-current="page"] span
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 31px;
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+    line-height: 1;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* 通常のページネーションリンク (前へ、次へ、ページ番号) */
+.admin-page__pagination a[rel="prev"],
+.admin-page__pagination a[rel="next"],
+.admin-page__pagination a[href*="page="] {
+    color: #8B7969;
+    background-color: #fff;
+    border: 1px solid #d1c8bf;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+.admin-page__pagination a[rel="prev"]:hover,
+.admin-page__pagination a[rel="next"]:hover,
+.admin-page__pagination a[href*="page="]:hover {
+    background-color: #fdf9f5;
+    border-color: #b8afa5;
+    color: #6e5f50;
+}
+
+/* ページネーションのSVGアイコンの色 */
+.admin-page__pagination a[rel="prev"] svg,
+.admin-page__pagination a[rel="next"] svg {
+    fill: currentColor;
+}
+
+/* アクティブなページ番号 (現在のページ) */
+.admin-page__pagination span[aria-current="page"] > span {
+    color: #fff;
+    background-color: #8B7969;
+    border: 1px solid #8B7969;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 無効なページネーションリンク (例: 「前へ」が先頭ページで表示される場合) */
+.admin-page__pagination span[aria-disabled="true"] > span {
+    color: #c5b8a9;
+    background-color: #f7f5f2;
+    border: 1px solid #e7e2dc;
+    box-shadow: none;
+}
+.admin-page__pagination span[aria-disabled="true"] svg {
+    fill: currentColor;
+}
+
+/* --- モーダルウィンドウのスタイル --- */
+/* モーダルウィンドウ全体 */
+.admin-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* モーダルウィンドウのコンテンツ部分 */
+.admin-modal__content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    margin: 20px;
+}
+
+/* モーダルウィンドウの閉じるボタン */
+.admin-modal__close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+.admin-modal__close-button:hover {
+    color: #333;
+}
+
+/* モーダルウィンドウのタイトル */
+.admin-modal__title {
+    font-size: 22px;
+    color: #8B7969;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* モーダルウィンドウの本文エリア */
+.admin-modal__body {
+    margin-bottom: 30px;
+}
+
+/* モーダル内の詳細情報リスト (dt, dd を使用) */
+.admin-modal__detail-list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px 20px;
+    font-size: 20px;
+    margin: 100px 30px;
+}
+
+/* モーダル内の詳細情報リスト ラベル (dt) */
+.admin-modal__detail-list dt {
+    font-weight: bold;
+    color: #555;
+    margin-right: 60px;
+}
+
+/* モーダル内の詳細情報リスト 値 (dd) */
+.admin-modal__detail-list dd {
+    margin-left: 0;
+    color: #333;
+    word-break: break-all;
+}
+
+/* モーダルウィンドウのフッターエリア */
+.admin-modal__footer {
+    text-align: center;
+}
+
+/* モーダルウィンドウ内のボタン (共通スタイル) */
+.admin-modal__button {
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+/* モーダルウィンドウ内の削除ボタン */
+.admin-modal__button--delete {
+    background-color: #c53030;
+    color: #fff;
+}
+.admin-modal__button--delete:hover {
+    background-color: #9b2c2c;
+}
+
+/* エクスポートボタンのスタイル (admin-page__actions-and-pagination 内) */
+.admin-page__button--export {
+    padding: 6px 18px;
+    border: 1px solid #8B7969;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    line-height: 1;
+    cursor: pointer;
+    background-color: #fff;
+    color: #8B7969;
+    height: 39px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
