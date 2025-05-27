@@ -35,7 +35,7 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
-    color: #333;
+    color: #8B7969;
     background-color: #f9f9f9;
 }
 
@@ -72,8 +72,8 @@
 
 /* フィルター内のリセットボタン */
 .admin-filter__button--reset {
-    background-color: #c0c0c0;
-    color: #333;
+    background-color: #D9C6B5;
+    color: #fff;
 }
 
 /* エクスポートボタンとページネーションのラッパー */
@@ -88,6 +88,10 @@
 /* エクスポートボタンなどのアクションエリア */
 .admin-page__actions {
     margin: 0;
+}
+.admin-page__actions a {
+    text-decoration: none;
+    background-color: #E1DBD699;
 }
 
 /* ページネーション全体のラッパー */
@@ -140,7 +144,7 @@
 /* テーブルのデータセル */
 .admin-table__data {
     background-color: #fff;
-    color: #333;
+    color: #8B7969;
 }
 
 /* テーブルの最終行のデータセルの下線を削除 */
@@ -246,7 +250,7 @@ svg.w-5.h-5 {
 }
 
 /* アクティブなページ番号 (現在のページ) */
-.admin-page__pagination span[aria-current="page"] > span {
+.admin-page__pagination li[aria-current="page"] span {
     color: #fff;
     background-color: #8B7969;
     border: 1px solid #8B7969;
@@ -288,7 +292,7 @@ svg.w-5.h-5 {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     width: 100%;
-    max-width: 600px;
+    max-width: 805px;
     position: relative;
     margin: 20px;
 }

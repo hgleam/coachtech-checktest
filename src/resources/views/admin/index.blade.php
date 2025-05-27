@@ -49,7 +49,7 @@
 
     <div class='admin-page__actions-and-pagination'>
         <div class='admin-page__actions'>
-            <button class='admin-page__button admin-page__button--export'>エクスポート</button>
+            <a href="{{ route('admin.export', request()->query()) }}" class='admin-page__button admin-page__button--export'>エクスポート</a>
         </div>
 
         <div class='admin-page__pagination'>
@@ -71,14 +71,14 @@
             @foreach($contacts as $contact)
             <tr>
                 <td class='admin-table__data'>{{ $contact->last_name }}　{{ $contact->first_name }}</td>
-                <td class='admin-table__data'>{{ config('master.gender')[$contact->gender] }}</td>
+                <td class='admin-table__data'>{{ $contact->getGenderText() }}</td>
                 <td class='admin-table__data'>{{ $contact->email }}</td>
                 <td class='admin-table__data'>{{ $contact->category->content ?? 'カテゴリなし' }}</td>
                 <td class='admin-table__data admin-table__data--action'>
                     <a href='#' class='admin-table__action-link js-open-modal'
                         data-contact-id='{{ $contact->id }}'
                         data-name='{{ $contact->last_name }} {{ $contact->first_name }}'
-                        data-gender='{{ $contact->gender }}'
+                        data-gender='{{ $contact->getGenderText() }}'
                         data-email='{{ $contact->email }}'
                         data-tel='{{ $contact->tel }}'
                         data-address='{{ $contact->address }}'

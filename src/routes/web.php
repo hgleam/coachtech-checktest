@@ -22,5 +22,6 @@ Route::post('thanks', [ContactController::class, 'thanks'])->name('contact.thank
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index'); // お問い合わせ一覧画面
     Route::get('/search', [AdminController::class, 'search'])->name('admin.search'); // お問い合わせ検索画面
+    Route::get('/export', [AdminController::class, 'exportCsv'])->name('admin.export'); // CSVエクスポート
     Route::delete('/contacts/{contact}', [AdminController::class, 'destroy'])->name('admin.destroy'); // お問い合わせ削除画面
 });

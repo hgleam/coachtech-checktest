@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 /**
  * お問い合わせモデル
@@ -101,6 +102,30 @@ class Contact extends Model
             return $query->whereDate('created_at', $date);
         }
         return $query;
+    }
+
+    /**
+     * 管理画面の検索フィルターを適用するローカルスコープ
+     *
+     * @param Builder $query
+     * @param Request $request
+     * @return Builder
+     */
+    public function scopeApplySearchFilters(Builder $query, Request $request): Builder
+    {
+        return $query->searchByKeyword($request->input('keyword'))
+            ->searchByGender($request->input('gender'))
+            ->searchByCategoryId($request->input('category_id'))
+            ->searchByDate($request->input('date'));
+    }
+
+    /**
+     * 性別のテキスト表現を取得
+     * @return string
+     */
+    public function getGenderText(): string
+    {
+        return config('master.gender')[$this->gender];
     }
 
     /**

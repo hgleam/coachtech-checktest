@@ -24,8 +24,6 @@
 </div>
 
 <script>
-    const genderMap = @json(config('master.gender'));
-
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('contactDetailModal');
     const openModalButtons = document.querySelectorAll('.js-open-modal');
@@ -42,12 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
 
             document.getElementById('modalContactName').textContent = this.dataset.name;
-            const genderValue = this.dataset.gender;
-            if (genderMap && genderMap.hasOwnProperty(genderValue)) {
-                document.getElementById('modalContactGender').textContent = genderMap[genderValue];
-            } else {
-                document.getElementById('modalContactGender').textContent = '未設定';
-            }
+            document.getElementById('modalContactGender').textContent = this.dataset.gender;
             document.getElementById('modalContactEmail').textContent = this.dataset.email;
             document.getElementById('modalContactTel').textContent = this.dataset.tel;
             document.getElementById('modalContactAddress').textContent = this.dataset.address;

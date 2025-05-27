@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Contact;
+use App\Services\ContactCsvExportService;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -20,7 +21,7 @@ class AdminController extends Controller
     public function index()
     {
         // 初期表示時は検索条件なしで全件表示（ページネーションあり）
-        $contacts = Contact::with('category')->orderBy('created_at', 'desc')->paginate(7);
+        $contacts = Contact::with('category')->orderBy('created_at', 'desc')->paginate(self::PER_PAGE);
         $categories = Category::all()->keyBy('id'); // カテゴリ一覧を取得
         return view('admin.index', compact('contacts', 'categories'));
     }
@@ -34,10 +35,7 @@ class AdminController extends Controller
     {
         $contacts = Contact::query()
             ->with('category')
-            ->searchByKeyword($request->input('keyword'))
-            ->searchByGender($request->input('gender'))
-            ->searchByCategoryId($request->input('category_id'))
-            ->searchByDate($request->input('date'))
+            ->applySearchFilters($request)
             ->orderBy('created_at', 'desc')
             ->paginate(self::PER_PAGE)
             ->appends($request->query());
@@ -56,5 +54,17 @@ class AdminController extends Controller
     {
         $contact->delete();
         return redirect()->route('admin.index')->with('success', 'お問い合わせを削除しました。');
+    }
+
+    /**
+     * お問い合わせ情報をCSV形式でエクスポートします。
+     *
+     * @param Request $request
+     * @param ContactCsvExportService $csvExportService
+     * @return \Symfony\Component\HttpFoundation\StreamedResponse
+     */
+    public function exportCsv(Request $request, ContactCsvExportService $csvExportService)
+    {
+        return $csvExportService->export($request);
     }
 }
