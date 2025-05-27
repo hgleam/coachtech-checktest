@@ -2,19 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * ユーザーモデル
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
+     * モデルのfillable属性
      * @var array<int, string>
      */
     protected $fillable = [
@@ -24,8 +25,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
+     * モデルのhidden属性
      * @var array<int, string>
      */
     protected $hidden = [
@@ -34,8 +34,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast.
-     *
+     * モデルのcasts属性
      * @var array<string, string>
      */
     protected $casts = [

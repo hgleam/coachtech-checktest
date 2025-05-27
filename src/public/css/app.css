@@ -55,6 +55,16 @@ select {
     color: #8B7969;
 }
 
+/* サイトヘッダーのアクションエリア (例: ログイン/ログアウトボタン) */
+.site-header__actions {
+    position: absolute;
+    right: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
 /* サイトヘッダー内の汎用リンクスタイル */
 .site-header__link {
     font-size: 20px;
